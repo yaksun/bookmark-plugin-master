@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html style="width: 750px; height: 472px;">
+  <head>
+    <title>popup页</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/externe/semantic.min.css " rel="stylesheet" />
+    <link href="css/externe/toastr.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/externe/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="js/externe/semantic.min.js"></script>
+    <script type="text/javascript" src="js/externe/toastr.min.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
+    <style>
+      form {
+        margin: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+<!--<div>hhhh</div>-->
+<!--<button id="get Tag">发送</button>-->
+    <div class="ui inverted dimmer">
+      <h2 class="ui icon header" style="margin-top: 160px;">
+        <i class="send green icon"></i>
+        书签添加成功, 1秒后窗口将自动关闭！
+      </h2>
+    </div>
+    <div>
+      <div class="ui inverted dimmer js-tags-loading">
+        <div class="ui text loader">正在获取分类...</div>
+      </div>
+    </div>
+    <form class="ui form js-add-bookmark" style="display: none;">
+      <h3 class="ui header"><span class="js-popup-server"></span> - 添加书签</h3>
+      <div class="ui divider" style="margin-top: 20px; margin-bottom: 20px;"></div>
+      <div class="ui leftaligned grid">
+        <div class="left aligned two column row">
+          <div class="column">
+            <div class="required sixteen wide field">
+              <label>书签链接</label>
+              <input id="js-url" type="text" placeholder="输粘贴网页地址，如：https://mybookmark.cn/" />
+            </div>
+          </div>
+          <div class="column">
+            <div class="required sixteen wide field">
+              <label id="js-restore-title">书签标题</label>
+              <div class="ui icon input">
+                <input id="js-title" type="text" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="required field">
+        <div class="fields"></div>
+      </div>
+      <div class="required field">
+        <label>
+          已有书签分类选择
+          <span title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;友情提示：&#10;1、添加新书签，根据使用经验，默认会选择最后一次使用分类。&#10;2、如果不是的，直接去选择其他的就好，系统会自动取消。&#10;3、若想对当前分类进行编辑或者添加分类，请前往分类页面！">
+            <i class="info circle icon"></i>
+          </span>
+        </label>
+        <div class="ui label" id="js-add-tag" style="margin: 3px 10px 8px 0px; cursor: default;" title="添加新分类">
+          <i style="margin-left: 10px;" class="plus icon"></i>
+        </div>
+      </div>
+      <div class="field">
+        <label>描述</label>
+        <textarea rows="4" id="js-desc" placeholder="如果添加书签，可以是网站的说明，也可以备忘一下账号或者摘抄内容，就算公开你的链接，这个也只有自己能在详情里面看到。&#13;&#10;书签标题已过滤无用信息，若您觉得过滤的标题有误，点击输入框上面的 书签标题* 即可还原。"></textarea>
+      </div>
+      <div class="field">
+        <div class="ui checkbox js-public" style="margin-top: 8px;">
+          <input type="checkbox" />
+          <label>我要公开此收藏的链接供别人搜索</label>
+        </div>
+        <div class="actions" style="float: right; margin-right: -3px;">
+          <div class="ui grey mini button js-cancel" style="cursor: default;">取消</div>
+          <div class="ui blue mini button js-send-bookmark" style="cursor: default; margin-left: 15px;">确认</div>
+        </div>
+      </div>
+    </form>
+    <form class="ui form js-login" style="display: none;">
+      <div class="ui inverted dimmer js-login-loading">
+        <div class="ui text loader">登录中...</div>
+      </div>
+      <h3 class="ui header"><span class="js-popup-server"></span> - 登录</h3>
+      <div class="ui divider" style="margin-top: 20px; margin-bottom: 20px;"></div>
+      <div class="required field">
+        <label>账号</label>
+        <input id="js-username" type="text" />
+      </div>
+      <div class="required field">
+        <label>密码</label>
+        <input id="js-password" type="password" />
+      </div>
+      <div class="actions" style="float: right; margin-right: -5px;">
+        <div class="ui grey mini button js-cancel" style="cursor: default;">取消</div>
+        <div class="ui blue mini button js-send-login" style="cursor: default; margin-left: 15px;">登录</div>
+      </div>
+    </form>
+  </body>
+</html>
