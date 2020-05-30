@@ -22,16 +22,16 @@
 
       function getTags() {
         bg.jqAjax(server + 'api/tags/', 'GET', {}, function (reply) {
-          console.log('get tags', reply);
+          // console.log('get tags', reply);
           debugger;
 
           $('.js-tags-loading').removeClass('active');
 
-          if (reply.code == 0) {
+          if (reply != undefined) {
             $(".js-add-bookmark").show();
             $(".js-login").hide();
 
-            tags = reply.data;
+            tags = reply;
 
               console.log(tags,6666);
 
@@ -63,7 +63,7 @@
               tagId = $(this).attr('id');
               $('#' + tagId).addClass('green');
             });
-          } else if (reply.code == 401) {
+          } else {
             $(".js-add-bookmark").hide();
             $(".js-login").show();
             $("html").css("width", "350px");
