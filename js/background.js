@@ -6,13 +6,15 @@ function reloadStorage(callBack) {
   chrome.storage.sync.get({ bookmarkServer: 'http://192.168.1.211:9527/', Authorization: '' }, function (items) {
     console.log('reloadStorage ', items);
     server = items.bookmarkServer;
-    Authorization = items.Authorization;
+
+      Authorization = items.Authorization;
     callBack && callBack();
   });
 }
 
 function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallback, completeCallback) {
-  $.ajax({
+
+    $.ajax({
     url: url,
     type: type, //GET POST
     contentType: 'application/json', //必须有
@@ -21,20 +23,24 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
     timeout: 3000, //超时时间
     dataType: 'json', //返回的数据格式：json/xml/html/script/jsonp/text
     success: function (data, textStatus, jqXHR) {
-      successCallback && successCallback(data, textStatus, jqXHR);
+        console.log('success');
+        successCallback && successCallback(data, textStatus, jqXHR);
     },
     error: function (xhr, textStatus) {
-      errorCallback && errorCallback(xhr, textStatus);
+        console.log('error');
+        errorCallback && errorCallback(xhr, textStatus);
     },
     beforeSend: function (xhr) {
       xhr.setRequestHeader('Authorization', Authorization);
       beforeSendCallback && beforeSendCallback(xhr);
     },
     complete: function () {
+
       completeCallback && completeCallback();
     },
   });
 }
+
 
 function addBookmark(info, tab, tagId) {
   let url = server + 'api/bookmarkAdd/';
@@ -48,6 +54,7 @@ function addBookmark(info, tab, tagId) {
     init();
   });
 }
+
 
 function addNote(info, tab, tagId) {
   let url = server + 'api/noteAdd/';

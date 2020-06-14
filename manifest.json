@@ -29,7 +29,7 @@
       "run_at": "document_start"
     }
   ],
-  "permissions": ["contextMenus", "activeTab", "storage","tabs"],
+  "permissions": ["contextMenus", "activeTab", "storage"],
   "web_accessible_resources": ["js/inject.js"],
   "homepage_url": "http://192.168.1.211:9527/",
   "omnibox": {
