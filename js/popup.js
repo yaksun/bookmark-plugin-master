@@ -1,8 +1,8 @@
 
 (function (window) {
-    var server = 'http://www.yaksun.icu:83/';
+    var server = 'http://yaksun.icu:83/';
 
-    chrome.storage.sync.get({ bookmarkServer: 'http://www.yaksun.icu:83/' }, function (items) {
+    chrome.storage.sync.get({ bookmarkServer: 'http://yaksun.icu:83/' }, function (items) {
     server = items.bookmarkServer;
     $('.js-popup-server').text(server);
     chrome.tabs.getSelected(null, function (tab) {
