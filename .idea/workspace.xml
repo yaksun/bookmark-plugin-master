@@ -129,7 +129,7 @@
       <find>GET</find>
       <find>bg</find>
       <find>reloadStorage</find>
-      <find>http://192.168.1.211:9527/</find>
+      <find>http://www.yaksun.icu:83/</find>
       <find>addBookmark</find>
       <find>favoriteBookmark</find>
       <find>Authorization</find>
@@ -140,7 +140,7 @@
       <find>sendBookmark</find>
     </findStrings>
     <replaceStrings>
-      <replace>http://192.168.1.211:9527/</replace>
+      <replace>http://www.yaksun.icu:83/</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
