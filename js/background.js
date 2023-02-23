@@ -1,10 +1,10 @@
 console.log('bookmark init background');
 // chrome.storage.sync.set({ Authorization: "" });
 // var server = 'http://localhost:2000/';
-var server = 'http://yaksun.icu:83/';
+var server = 'http://139.224.195.82:8090/';
 var Authorization = "";
 function reloadStorage(callBack) {
-  chrome.storage.sync.get({ bookmarkServer: 'http://yaksun.icu:83/', Authorization: '' }, function (items) {
+  chrome.storage.sync.get({ bookmarkServer: 'http://139.224.195.82:8090/', Authorization: '' }, function (items) {
     console.log('reloadStorage ', items);
     server = items.bookmarkServer;
 
